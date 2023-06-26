@@ -39,10 +39,11 @@ html {
 body {
   margin: 0;
   overflow: hidden;
+  cursor: none;
 }
 
-button:not([disabled]) {
-  cursor: pointer;
+button:hover {
+  cursor: none;
 }
 
 /*********************/
@@ -52,7 +53,7 @@ button:not([disabled]) {
 :root {
   --color-headings: crimson;
   --delay-animation-factor: 1.4;
-  --delay-total-animation: .7s;
+  --delay-total-animation: 1.8s;
 }
 
 /********************/
@@ -63,10 +64,6 @@ header {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
-
-h1 {
-  color: var(--color-headings);
 }
 
 ol li {
@@ -94,11 +91,16 @@ ol li {
   opacity: 0;
   transition-duration: 2s;
   transition-delay: .6s;
+
+  background-image: url("../images/wave-flag-of-uruguay-with-copyspace-background-vector.jpg");
+  background-position: center;
+  background-size: cover;
 }
 
 .information-visible {
   opacity: 1;
   pointer-events: all;
+  outline: solid 0em white !important;
 }
 
 .year {
@@ -229,7 +231,7 @@ main {
 
 main > section {
   position: absolute;
-  top: 49%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   margin: 0;
@@ -241,7 +243,7 @@ main > section {
   background-color: #00182f7e;
   backdrop-filter: blur(10px);
   border-radius: .8em;
-  border: 1px solid white;
+  /* border: 1px solid #0E87FF; */
 
   animation-duration: 1.5s;
   animation-delay: 0.5s;
@@ -254,20 +256,68 @@ main > section {
 @keyframes lineup {
   0% {
     opacity: 0;
-    transform: translate(-50%, -50%) scaleX(0);
+    transform: translate(-50%, -50%) scaleX(0) scaleY(.8);
   }
   100% {
     opacity: 1;
-    transform: translate(-50%, -50%) scaleX(1);
+    transform: translate(-50%, -50%) scaleY(1) scaleY(1);
   }
 }
 
 h1 {
   width: 100%;
-  background-color: #0E1E5B;
+  background-color: #00182F;
   text-align: center;
-  border-bottom: 1px solid white;
   border-radius: .4em .4em 0 0;
+  font-family: 'Open Sans', sans-serif;
+  color: white;
+  font-weight: 700;
+  padding: .16em 0;
+  font-size: 1.4em;
+}
+
+h3 {
+  margin-top: -.1em;
+  background-color: #E4E8F0;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  color: #505B73;
+  font-weight: 400;
+  padding: .16em 0;
+  font-size: 1em;
+  width: 4em;
+  /* border-radius: 1em; */
+  border-left: .4em solid #1277D9;
+
+  animation-duration: 1.6s;
+  animation-delay: 5s;
+  animation-name: year;
+  animation-timing-function: cubic-bezier(0.5, 0.05, 1, 0.5);
+  animation-fill-mode: backwards;
+  animation-timing-function: ease;
+}
+
+@keyframes year {
+  0% {
+    width: 0em;
+    border-left: .4em solid #1276d900;
+    background-color: #e4e8f000;
+    color: #505b7300;
+  }
+  1% {
+    background-color: #E4E8F0;
+    border-left: .4em solid #1277D9;
+  }
+  96% {
+    color: #505B73;
+  }
+  100% {
+    width: 4em;
+  }
+}
+
+.year-hover {
+  border-left: 4em solid #1277D9;
 }
 
 ol li div button {
@@ -281,7 +331,7 @@ ol li div button {
   list-style: none;
   animation-delay: 0.6s;
   transform: translate(-50%, -50%);
-  transition: 3s;
+  transition: 3s, outline .125s, background-color .125s;
 
 
   background-repeat: no-repeat;
@@ -301,6 +351,12 @@ ol li div button {
   animation-timing-function: cubic-bezier(0.5, 0.05, 1, 0.5);
   animation-fill-mode: backwards;
   animation-timing-function: ease;
+  outline: solid 0 white;
+}
+
+ol li div button:hover {
+  outline: solid .4em white;
+  background-color: white;
 }
 
 ol li:nth-of-type(1) button {
@@ -464,9 +520,10 @@ ol li:nth-of-type(22) button {
 
 .balls-zoom-in {
   top: 50% !important;
-  left: 50% !important;
+  left: 25% !important;
   transform: translate(-50%, -50%) scale(420%);
   z-index: 999 !important;
+  /* margin-left: -40em; */
 }
 
 /* ol li:hover {
@@ -617,3 +674,27 @@ ol li:nth-of-type(22) button {
     left: 83.33%;
   }
 } */
+
+.inner-cursor img {
+  width: 1vw;
+  height: 1vw;
+}
+
+.outer-cursor img {
+  transform: scale(50%);
+}
+
+.inner-cursor, .outer-cursor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  pointer-events: none;
+  -webkit-filter: drop-shadow(2px 2px 2px #222);
+  filter: drop-shadow(2px 2px 2px #222);
+}
+
+.cursor {
+  opacity: 0;
+}
