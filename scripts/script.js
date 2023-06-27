@@ -1,24 +1,34 @@
-// JavaScript Document
-console.log("Howdy!");
+///////////////
+// VARIABLES //
+///////////////
 
-const balls = document.querySelectorAll("ol li div button");
+const balls = document.querySelectorAll("button");
 const information = document.querySelectorAll(".info");
 const heading = document.querySelector("h2");
 const paragraph = document.querySelector("p");
-// const background = document.getElementsByClassName("background");
+const cursor =  document.getElementById("cursor");
+const brick = document.getElementById("brick")
+
+let goalkeeperCursor = document.querySelector(".goalkeeper-cursor");
 
 
-let outerCursor = document.querySelector(".outer-cursor");
-
-
+/////////////////////////////
+// BALL'S ZOOM-IN FUNCTION //
+/////////////////////////////
 
 balls.forEach((ball) => {
   ball.addEventListener("click", function (e) {
-
+    
     ball.classList.toggle("balls-zoom-in");
+
+    if(ball.classList.contains('easter')){
+      // alert("Yes! the button contains this 'buttonStyle' class");
+      brick.classList.toggle("brick-visible");
+    }
+
     information.forEach((info) => {
       info.classList.toggle("information-visible");
-    })
+    });
 
     heading.textContent = e.target.dataset.heading;
     paragraph.textContent = e.target.dataset.paragraph;
@@ -27,30 +37,33 @@ balls.forEach((ball) => {
 
   ball.addEventListener("mouseover", () => {
     document.getElementById("cursor").src = "images/cursor-pointer.png";
-    })
+    });
   ball.addEventListener("mouseleave", () => {
     document.getElementById("cursor").src = "images/cursor-default.png";
-  })
+  });
 });
 
 
-
-document.addEventListener("mousemove", moveCursor);
+///////////////////
+// CUSTOM CURSOR //
+///////////////////
 
 function moveCursor(e){
   let x = e.clientX;
   let y = e.clientY;
 
-  outerCursor.style.left = `${x}px`;
-  outerCursor.style.top = `${y}px`;
+  goalkeeperCursor.style.left = `${x}px`;
+  goalkeeperCursor.style.top = `${y}px`;
 }
+document.addEventListener("mousemove", moveCursor);
 // From: https://www.youtube.com/watch?v=Irwf2_1p7tQ
 
 
-const cursor =  document.getElementById('cursor');
+///////////////////////////////
+// ONLOAD TRANSPARENT CURSOR //
+///////////////////////////////
 
 function opacity (){
   cursor.classList.remove('cursor');
 }
-
 document.addEventListener("mousemove", opacity);

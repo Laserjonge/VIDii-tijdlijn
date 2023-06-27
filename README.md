@@ -44,84 +44,26 @@ Mijn startniveau is: rood
 ## Voortgang/Feedback 1
 
 <details>
-  <summary>Mijn bevindingen + wijzigingen (minimaal 5)</summary>
+  <summary>Mijn bevindingen + wijzigingen</summary>
 
   ### Bevinding 1:
-  Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
+
+  <img src="readme-images/Scherm­afbeelding 2023-06-27 om 22.40.32.png" width="375px" alt="eerste versie/schets">
+
+  Bij het bedienen van mijn tijdlijn met toetesenbord is het mogelijk om 2 of meer ballen tegelijkertijd te openen. Dit is eigenlijk niet de bedoeling.
 
   #### oplossing:
-  Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
+  Het is mij nog niet gelukt om dit op te lossen. Ik heb wel een idee gehad hoe ik dit eventueel zou kunnen maken: door via javascript alle achterliggende items te disablen zodat alleen nog de ball button buikbaar is en je dus niet meer kunt door tabben naar de volgende ballen.
 
 
 
   ### Bevinding 2:
-  Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
+  <img src="readme-images/Scherm­afbeelding 2023-06-27 om 22.55.33.png" width="375px" alt="eerste versie/schets">
+
+  Voor kleinere schermen is de tijdlijn nog niet helemaal responsive, momenteel is de website gericht op gebruikers met een desktop of tablet. Voor mobiel overlappen er nog te veel elementen.
 
   #### oplossing:
-  Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
-
-
-
-  ### Bevinding 3:
-  ...
-
-</details>
-
-
-
-
-## Voortgang/Feedback 2
-
-<details>
-  <summary>Mijn bevindingen + wijzigingen (minimaal 5)</summary>
-  
-  ### Bevinding 1:
-  Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
-
-  #### oplossing:
-  Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
-
-
-
-  ### Bevinding 2:
-  Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
-
-  #### oplossing:
-  Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
-
-
-
-  ### Bevinding 3:
-  ...
-
-</details>
-
-
-
-
-## Voortgang/Feedback 3
-
-<details>
-  <summary>Mijn bevindingen + wijzigingen (minimaal 5)</summary>
-  
-  ### Bevinding 1:
-  Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
-
-  #### oplossing:
-  Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
-
-
-
-  ### Bevinding 2:
-  Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
-
-  #### oplossing:
-  Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
-
-
-
-  ### Bevinding 3:
-  ...
+  Dit probleem zou op te lossen zijn met meerdere media quieries.
 
 </details>
 
@@ -134,20 +76,17 @@ Mijn startniveau is: rood
   <summary>Mijn eindresultaat & persoonlijke ontwikkeling</summary>
 
   ### Je uitkomst - karakteristiek screenshot(s):
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="final ontwerp">
+  <img src="readme-images/Scherm­afbeelding 2023-06-27 om 23.00.56.png" width="375px" alt="final ontwerp">
 
 
   ### Dit ging goed/Heb ik geleerd: 
-  Korte omschrijving met plaatje(s)
+  Tijdens het coderen van deze tijdlijn heb ik geleerd hoe je zelf een grid kunt maken door middel van position: absolute;, zonder dat het letterlijk een grid wordt. Dit heb ik bewerkstelligd om de zoom-in animatie vloeiend te laten verlopen.
 
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="top">
+  <img src="readme-images/Scherm­afbeelding 2023-06-27 om 23.07.34.png" width="375px" alt="top">
 
 
-  ### Dit was lastig/Is niet gelukt:
-  Korte omschrijving met plaatje(s)
-
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="bummer">
-</details>
+  ### Dit was lastig  Korte omschrijving met plaatje(s)/Is niet gelukt:
+  In het begin stadium van dit project was ik van plan om alle WK ballen interacief en 3D te presenteren. Deze teckniek was behoorlijk complex, op een zeker moment was het ook gelukt om 1 bal op deze wijze te coderen. Uiteindelijk heb ik toch voor een 2D variant gekozen omdat hier wel alle content van te vinden was en dit een rustiger beeld geeft.
 
 
 
@@ -155,12 +94,7 @@ Mijn startniveau is: rood
 ## Bronnenlijst
 
 <details open>
-<summary>continu bijhouden terwijl je werkt</summary>
 
-Nb. Wees specifiek ('css-tricks' als bron is bijv. niet specifiek genoeg).
-
-1. bron 1
-2. bron 2
-3. ...
+[https://docs.google.com/document/d/15O7zkIN6aT6goo1X8-R74xxHLS2yj60yhK1sgpDVkGI/edit](https://docs.google.com/document/d/15O7zkIN6aT6goo1X8-R74xxHLS2yj60yhK1sgpDVkGI/edit)
 
 </details>

@@ -1,6 +1,7 @@
 /*************/
 /* CSS RESET */
 /*************/
+
 *,
 *::after,
 *::before {
@@ -24,55 +25,56 @@ html {
   cursor: none;
 }
 
-/* html {
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -o-user-select: none;
-  user-select: none;
-} */
-
-/* naar een idee van Jen Simmons */
-*,
-*::after,
-*::before {
-  box-sizing: border-box;
-}
-
 body {
   margin: 0;
   overflow: hidden;
   cursor: none;
 }
 
-button:hover {
-  cursor: none;
-}
-
-a {
-  position: absolute;
-  font-family: 'Open Sans', sans-serif;
-  color: #1277D9;
-  font-weight: 400;
-  font-size: .8em;
-  text-decoration: none;
-  bottom: -1.2em;
-  right: .4em;
-}
 
 /*********************/
 /* CUSTOM PROPERTIES */
 /*********************/
 
 :root {
-  --color-headings: crimson;
+  /* FONTS */
+  --main-font-family: 'Open Sans', sans-serif;
+
+  /* COLORS */
+  --fifa-light-blue: #1277d9;
+  --fifa-light-blue-transparent: #1276d900;
+
+  --fifa-blue: #505b73;
+  --fifa-blue-transparent: #505b7300;
+
+  --fifa-dark-blue: #00182f;
+  --fifa-dark-blue-transparent: #00182f7e;
+
+  --fifa-broken-white: #e4e8f0;
+  --fifa-broken-white-transparent: #e4e8f000;
+
+  --total-white: #ffffff;
+
+  /* EFFECTS */
+  --main-backdrop: blur(10px);
+  --ball-shadows: rgba(255, 3, 3, .17) 0 -23px 25px 0 inset,
+  rgba(0, 0, 0, .15) 0 -36px 30px 0 inset,
+  rgba(0, 0, 0, .1) 0 -79px 40px 0 inset, rgba(0, 0, 0, .06) 0 2px 1px,
+  rgba(0, 0, 0, .09) 0 4px 2px, rgba(0, 0, 0, .09) 0 8px 4px,
+  rgba(0, 0, 0, .09) 0 16px 8px, rgba(0, 0, 0, .09) 0 32px 16px;
+  --cursor-backdrop: drop-shadow(2px 2px 2px #222);
+
+
+  /* LOTTERY FADE IN */
   --delay-animation-factor: 1.4;
   --delay-total-animation: 1.8s;
 }
 
-/********************/
-/* ALGEMENE STYLING */
-/********************/
+
+/*******************/
+/* GENERAL STYLING */
+/*******************/
+
 header {
   position: absolute;
   top: 50%;
@@ -80,7 +82,201 @@ header {
   transform: translate(-50%, -50%);
 }
 
-ol li {
+main {
+  width: 100%;
+  height: 100vh;
+  background-image: url("../images/main-background.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+h1 {
+  width: 100%;
+  background-color: var(--fifa-dark-blue);
+  text-align: center;
+  border-radius: .4em .4em 0 0;
+  font-family: var(--main-font-family);
+  color: var(--total-white);
+  font-weight: 700;
+  padding: .16em 0;
+  font-size: 1.4em;
+
+  animation-duration: 2s;
+  animation-delay: 1.2s;
+  animation-name: heading-delay;
+  animation-timing-function: cubic-bezier(.5, .05, 1, .5);
+  animation-fill-mode: backwards;
+  animation-timing-function: ease;
+}
+
+@keyframes heading-delay {
+  0% {
+    color: rgba(255, 255, 255, 0);
+  }
+  100% {
+    color: var(--total-white);
+  }
+}
+
+h2 {
+  font-family: var(--main-font-family);
+  color: var(--total-white);
+  font-weight: 700;
+  font-size: 3.2em;
+  text-align: center;
+}
+
+h3 {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  margin-top: -.1em;
+  background-color: var(--fifa-broken-white);
+  text-align: center;
+  font-family: var(--main-font-family);
+  color: var(--fifa-blue);
+  font-weight: 400;
+  padding: .16em 0;
+  font-size: 1em;
+  width: 4em;
+  border-left: .4em solid var(--fifa-light-blue);
+
+  animation-duration: 1.6s;
+  animation-delay: 5s;
+  animation-name: year;
+  animation-timing-function: cubic-bezier(.5, .05, 1, .5);
+  animation-fill-mode: backwards;
+  animation-timing-function: ease;
+}
+
+@keyframes year {
+  0% {
+    width: 0;
+    border-left: .4em solid var(--fifa-light-blue-transparent);
+    background-color: var(--fifa-broken-white-transparent);
+    color: var(--fifa-blue-transparent);
+  }
+  1% {
+    background-color: var(--fifa-broken-white);
+    border-left: .4em solid ;
+  }
+  96% {
+    color: var(--fifa-blue);
+  }
+  100% {
+    width: 4em;
+  }
+}
+
+p {
+  font-family: var(--main-font-family);
+  color: var(--total-white);
+  opacity: .6;
+  font-weight: 400;
+  padding: .16em 0;
+  font-size: 1em;
+  text-align: center;
+}
+
+a {
+  position: absolute;
+  font-family: var(--main-font-family);
+  color: var(--fifa-light-blue);
+  font-weight: 400;
+  font-size: .8em;
+  text-decoration: none;
+  bottom: -1.2em;
+  right: .4em;
+
+  animation-duration: 2s;
+  animation-delay: 6.2s;
+  animation-name: anchor-delay;
+  animation-timing-function: cubic-bezier(.5, .05, 1, .5);
+  animation-fill-mode: backwards;
+  animation-timing-function: ease;
+}
+
+@keyframes anchor-delay {
+  0% {
+    color: var(--fifa-light-blue-transparent);
+  }
+  100% {
+    color: var(--fifa-light-blue);
+  }
+}
+
+.divider {
+  background-color: var(--total-white);
+  width: 100%;
+  height: .25em;
+  border-radius: .075em;
+  margin: 1em 0;
+}
+
+
+/*******************/
+/* GOALKEEPER CURSOR */
+/*******************/
+
+.goalkeeper-cursor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  pointer-events: none;
+  -webkit-filter: var(--cursor-backdrop);
+  filter: var(--cursor-backdrop);
+}
+
+.goalkeeper-cursor img {
+  transform: scale(.5);
+}
+
+.cursor {
+  opacity: 0;
+}
+
+
+/*******************/
+/* LINE-UP STYLING */
+/*******************/
+
+main > section:first-of-type {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  padding: 0;
+  height: 78vw;
+  max-width: 96%;
+  aspect-ratio: 5.6 / 4;
+  max-height: 90%;
+  background-color: var(--fifa-dark-blue-transparent);
+  backdrop-filter: var(--main-backdrop);
+  border-radius: .8em;
+
+  animation-duration: 1.5s;
+  animation-delay: .5s;
+  animation-name: lineup;
+  animation-timing-function: cubic-bezier(.5, .05, 1, .5);
+  animation-fill-mode: backwards;
+  animation-timing-function: ease;
+}
+
+@keyframes lineup {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scaleX(0) scaleY(.8);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scaleY(1) scaleY(1);
+  }
+}
+
+li {
+  position: absolute;
   width: 100%;
   height: 100vh;
   display: flex;
@@ -90,13 +286,8 @@ ol li {
   margin: 0;
 }
 
-ol li {
-  position: absolute;
-}
-
 .info {
   position: absolute;
-  /* background-color: blue; */
   height: 100%;
   width: 100%;
   padding: 3em;
@@ -112,321 +303,12 @@ ol li {
 .information-visible {
   opacity: 1;
   pointer-events: all;
-  outline: solid 0em white !important;
 }
 
-ol li:nth-of-type(1) .info {
-  background-image: url("../images/flag-1930.jpg");
-}
-ol li:nth-of-type(2) .info {
-  background-image: url("../images/flag-1934-1990.jpg");
-}
-ol li:nth-of-type(3) .info {
-  background-image: url("../images/flag-1938-1998.jpg");
-}
-ol li:nth-of-type(4) .info {
-  background-image: url("../images/flag-1950-2014.jpg");
-}
-ol li:nth-of-type(5) .info {
-  background-image: url("../images/flag-1954.jpg");
-}
-ol li:nth-of-type(6) .info {
-  background-image: url("../images/flag-1958.jpg");
-}
-ol li:nth-of-type(7) .info {
-  background-image: url("../images/flag-1962.jpg");
-}
-ol li:nth-of-type(8) .info {
-  background-image: url("../images/flag-1966.jpg");
-}
-ol li:nth-of-type(9) .info {
-  background-image: url("../images/flag-1970-1986.jpg");
-}
-ol li:nth-of-type(10) .info {
-  background-image: url("../images/flag-1974-2006.jpg");
-}
-ol li:nth-of-type(11) .info {
-  background-image: url("../images/flag-1978.jpg");
-}
-ol li:nth-of-type(12) .info {
-  background-image: url("../images/flag-1982.jpg");
-}
-ol li:nth-of-type(13) .info {
-  background-image: url("../images/flag-1970-1986.jpg");
-}
-ol li:nth-of-type(14) .info {
-  background-image: url("../images/flag-1934-1990.jpg");
-}
-ol li:nth-of-type(15) .info {
-  background-image: url("../images/flag-1994.jpg");
-}
-ol li:nth-of-type(16) .info {
-  background-image: url("../images/flag-1938-1998.jpg");
-}
-ol li:nth-of-type(17) .info {
-  background-image: url("../images/flag-2002jpg.jpg");
-}
-ol li:nth-of-type(18) .info {
-  background-image: url("../images/flag-1974-2006.jpg");
-}
-ol li:nth-of-type(19) .info {
-  background-image: url("../images/flag-2010.jpg");
-}
-ol li:nth-of-type(20) .info {
-  background-image: url("../images/flag-1950-2014.jpg");
-}
-ol li:nth-of-type(21) .info {
-  background-image: url("../images/flag-2018.jpg");
-}
-ol li:nth-of-type(22) .info {
-  background-image: url("../images/flag-2022.jpg");
-}
 
-.year {
-  position: absolute;
-  margin: 0;
-  padding: 0;
-  height: 64vw;
-  aspect-ratio: 6 / 4;
-  max-height: 80%;
-}
-
-h3 {
-  position: absolute;
-  z-index: 24;
-  transform: translate(-50%, -50%);
-  background-color: purple;
-  text-align: center;
-}
-
-ol li:nth-of-type(1) section:first-of-type h3 {
-  top: 24.5%;
-  left: 8.33%;
-}
-ol li:nth-of-type(2) section:first-of-type h3 {
-  top: 24.5%;
-  left: 25%;
-}
-
-ol li:nth-of-type(3) section:first-of-type h3 {
-  top: 24.5%;
-  left: 41.67%;
-}
-ol li:nth-of-type(4) section:first-of-type h3 {
-  top: 24.5%;
-  left: 58.33%;
-}
-ol li:nth-of-type(5) section:first-of-type h3 {
-  top: 24.5%;
-  left: 75%;
-}
-ol li:nth-of-type(6) section:first-of-type h3 {
-  top: 24.5%;
-  left: 91.67%;
-}
-
-ol li:nth-of-type(7) section:first-of-type h3 {
-  top: 49.5%;
-  left: 16.67%;
-}
-ol li:nth-of-type(8) section:first-of-type h3 {
-  top: 49.5%;
-  left: 33.33%;
-}
-ol li:nth-of-type(9) section:first-of-type h3 {
-  top: 49.5%;
-  left: 50%;
-}
-ol li:nth-of-type(10) section:first-of-type h3 {
-  top: 49.5%;
-  left: 66.67%;
-}
-ol li:nth-of-type(11) section:first-of-type h3 {
-  top: 49.5%;
-  left: 83.33%;
-}
-ol li:nth-of-type(12) section:first-of-type h3 {
-  top: 74.5%;
-  left: 8.33%;
-}
-ol li:nth-of-type(13) section:first-of-type h3 {
-  top: 74.5%;
-  left: 25%;
-}
-ol li:nth-of-type(14) section:first-of-type h3 {
-  top: 74.5%;
-  left: 41.67%;
-}
-ol li:nth-of-type(15) section:first-of-type h3 {
-  top: 74.5%;
-  left: 58.33%;
-}
-ol li:nth-of-type(16) section:first-of-type h3 {
-  top: 74.5%;
-  left: 75%;
-}
-ol li:nth-of-type(17) section:first-of-type h3 {
-  top: 74.5%;
-  left: 91.67%;
-}
-ol li:nth-of-type(18) section:first-of-type h3 {
-  top: 99.5%;
-  left: 16.67%;
-}
-ol li:nth-of-type(19) section:first-of-type h3 {
-  top: 99.5%;
-  left: 33.33%;
-}
-ol li:nth-of-type(20) section:first-of-type h3 {
-  top: 99.5%;
-  left: 50%;
-}
-ol li:nth-of-type(21) section:first-of-type h3 {
-  top: 99.5%;
-  left: 66.67%;
-}
-ol li:nth-of-type(22) section:first-of-type h3 {
-  top: 99.5%;
-  left: 83.33%;
-}
-
-ol li div {
-  position: relative;
-  margin: 0;
-  padding: 0;
-  height: 64vw;
-  aspect-ratio: 6 / 4;
-  max-height: 80%;
-}
-
-main {
-  width: 100%;
-  height: 100vh;
-  background-color: pink;
-  background-image: url("../images/pxfuel.jpg");
-  background-position: center;
-  background-size: cover;
-}
-
-main > section:first-of-type {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  margin: 0;
-  padding: 0;
-  height: 78vw;
-  max-width: 96%;
-  aspect-ratio: 5.6 / 4;
-  max-height: 90%;
-  background-color: #00182f7e;
-  backdrop-filter: blur(10px);
-  border-radius: .8em;
-  /* border: 1px solid #0E87FF; */
-
-  animation-duration: 1.5s;
-  animation-delay: 0.5s;
-  animation-name: lineup;
-  animation-timing-function: cubic-bezier(0.5, 0.05, 1, 0.5);
-  animation-fill-mode: backwards;
-  animation-timing-function: ease;
-}
-
-.resource {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  margin: 0;
-  padding: 0;
-  height: 78vw;
-  max-width: 96%;
-  aspect-ratio: 5.6 / 4;
-  max-height: 90%;
-}
-
-@keyframes lineup {
-  0% {
-    opacity: 0;
-    transform: translate(-50%, -50%) scaleX(0) scaleY(.8);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(-50%, -50%) scaleY(1) scaleY(1);
-  }
-}
-
-h1 {
-  width: 100%;
-  background-color: #00182F;
-  text-align: center;
-  border-radius: .4em .4em 0 0;
-  font-family: 'Open Sans', sans-serif;
-  color: white;
-  font-weight: 700;
-  padding: .16em 0;
-  font-size: 1.4em;
-
-  animation-duration: 2s;
-  animation-delay: 1.2s;
-  animation-name: heading-delay;
-  animation-timing-function: cubic-bezier(0.5, 0.05, 1, 0.5);
-  animation-fill-mode: backwards;
-  animation-timing-function: ease;
-}
-
-@keyframes heading-delay {
-  0% {
-    color: rgba(255, 255, 255, 0);
-  }
-  100% {
-    color: white;
-  }
-}
-
-h3 {
-  margin-top: -.1em;
-  background-color: #E4E8F0;
-  text-align: center;
-  font-family: 'Open Sans', sans-serif;
-  color: #505B73;
-  font-weight: 400;
-  padding: .16em 0;
-  font-size: 1em;
-  width: 4em;
-  /* border-radius: 1em; */
-  border-left: .4em solid #1277D9;
-
-  animation-duration: 1.6s;
-  animation-delay: 5s;
-  animation-name: year;
-  animation-timing-function: cubic-bezier(0.5, 0.05, 1, 0.5);
-  animation-fill-mode: backwards;
-  animation-timing-function: ease;
-}
-
-@keyframes year {
-  0% {
-    width: 0em;
-    border-left: .4em solid #1276d900;
-    background-color: #e4e8f000;
-    color: #505b7300;
-  }
-  1% {
-    background-color: #E4E8F0;
-    border-left: .4em solid #1277D9;
-  }
-  96% {
-    color: #505B73;
-  }
-  100% {
-    width: 4em;
-  }
-}
-
-.year-hover {
-  border-left: 4em solid #1277D9;
-}
+/******************/
+/* BALL POSITIONS */
+/******************/
 
 ol li div button {
   position: absolute;
@@ -434,10 +316,9 @@ ol li div button {
   height: 18%;
   border-radius: 100%;
   background-color: transparent;
-  /* outline: none; */
   border: none;
   list-style: none;
-  animation-delay: 0.6s;
+  animation-delay: .6s;
   transform: translate(-50%, -50%);
   transition: 3s, outline .125s, background-color .125s;
 
@@ -446,25 +327,34 @@ ol li div button {
   background-size: cover;
   background-position: center;
 
-  box-shadow: rgba(255, 3, 3, 0.17) 0px -23px 25px 0px inset,
-    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
-    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
-    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
-    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  box-shadow: var(--ball-shadows);
   /* From: https://getcssscan.com/css-box-shadow-examples */
 
-  animation-duration: 0.75s;
-  animation-delay: 0.5s;
-  animation-name: animate-glow;
-  animation-timing-function: cubic-bezier(0.5, 0.05, 1, 0.5);
+  animation-duration: .75s;
+  animation-delay: .5s;
+  animation-name: lottery-fade-in;
+  animation-timing-function: cubic-bezier(.5, .05, 1, .5);
   animation-fill-mode: backwards;
   animation-timing-function: ease;
-  outline: solid 0 white;
+  outline: solid 0 var(--total-white);
 }
 
-ol li div button:hover {
-  outline: solid .4em white;
-  background-color: white;
+@keyframes lottery-fade-in {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(4);
+    pointer-events: all;
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    pointer-events: all;
+  }
+}
+
+ol li div button:hover, ol li div button:focus {
+  outline: solid .28em var(--total-white);
+  background-color:  var(--total-white);
 }
 
 ol li:nth-of-type(1) button {
@@ -472,14 +362,14 @@ ol li:nth-of-type(1) button {
   left: 8.33%;
   z-index: 23;
   background-image: url("../images/ball-1930.png");
-  animation-delay: calc(var(--delay-animation-factor) * 0.6s + var(--delay-total-animation));
+  animation-delay: calc(var(--delay-animation-factor) * .6s + var(--delay-total-animation));
 }
 ol li:nth-of-type(2) button {
   top: 12.5%;
   left: 25%;
   z-index: 22;
   background-image: url("../images/ball-1934.png");
-  animation-delay: calc(var(--delay-animation-factor) * 0.7s + var(--delay-total-animation));
+  animation-delay: calc(var(--delay-animation-factor) * .7s + var(--delay-total-animation));
 }
 
 ol li:nth-of-type(3) button {
@@ -487,14 +377,14 @@ ol li:nth-of-type(3) button {
   left: 41.67%;
   z-index: 21;
   background-image: url("../images/ball-1938.png");
-  animation-delay: calc(var(--delay-animation-factor) * 0.8s + var(--delay-total-animation));
+  animation-delay: calc(var(--delay-animation-factor) * .8s + var(--delay-total-animation));
 }
 ol li:nth-of-type(4) button {
   top: 12.5%;
   left: 58.33%;
   z-index: 20;
   background-image: url("../images/ball-1950.png");
-  animation-delay: calc(var(--delay-animation-factor) * 0.9s + var(--delay-total-animation));
+  animation-delay: calc(var(--delay-animation-factor) * .9s + var(--delay-total-animation));
 }
 ol li:nth-of-type(5) button {
   top: 12.5%;
@@ -516,7 +406,7 @@ ol li:nth-of-type(7) button {
   left: 16.67%;
   z-index: 17;
   background-image: url("../images/ball-1962.png");
-  animation-delay: calc(var(--delay-animation-factor) * 0.9s + var(--delay-total-animation));
+  animation-delay: calc(var(--delay-animation-factor) * .9s + var(--delay-total-animation));
 }
 ol li:nth-of-type(8) button {
   top: 37.5%;
@@ -629,65 +519,160 @@ ol li:nth-of-type(22) button {
 .balls-zoom-in {
   top: 50% !important;
   left: 25% !important;
-  transform: translate(-50%, -50%) scale(420%);
-  z-index: 999 !important;
-  /* margin-left: -40em; */
+  transform: translate(-50%, -50%) scale(4.2);
+  z-index: 99 !important;
 }
 
-/* ol li:hover {
-  animation: bounce 0.5s 0.3s cubic-bezier(0.5, 0.05, 1, 0.5);
-  animation-direction: alternate;
-  animation-iteration-count: infinite;
-} */
-
-/* @keyframes bounce {
-  from {
-    transform: translate(-50%, -50%) translate3d(0, 0, 0);
-  }
-  to {
-    transform: translate(-50%, -50%) translate3d(0, 200%, 0);
-  }
-} */
-
-@keyframes animate-glow {
-  0% {
-    opacity: 0;
-    /* filter: brightness(3) saturate(3); */
-    transform: translate(-50%, -50%) scale(4);
-    pointer-events: all;
-  }
-  100% {
-    opacity: 1;
-    /* filter: brightness(1) saturate(1); */
-    transform: translate(-50%, -50%) scale(1);
-    pointer-events: all;
-  }
-}
-
-.inner-cursor img {
-  width: 1vw;
-  height: 1vw;
-}
-
-.outer-cursor img {
-  transform: scale(50%);
-}
-
-.inner-cursor, .outer-cursor {
+li:nth-of-type(4) a {
   position: absolute;
-  top: 0;
-  left: 0;
-  transform: translate(-50%, -50%);
-  z-index: 1000;
-  pointer-events: none;
-  -webkit-filter: drop-shadow(2px 2px 2px #222);
-  filter: drop-shadow(2px 2px 2px #222);
+  z-index: 99; 
+  opacity: 1;
+  right: 0%;
 }
 
-.cursor {
+li:nth-of-type(4) a img {
+  height: 3em;
+  transition-duration: 2.8s;
+  transition-delay: .3s;
+}
+
+.brick-visible {
+  height: 3em;
   opacity: 0;
+  /* pointer-events: all; */
 }
 
+
+/******************/
+/* YEAR POSITIONS */
+/******************/
+
+.year {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  height: 64vw;
+  aspect-ratio: 6 / 4;
+  max-height: 80%;
+  z-index: 24;
+  pointer-events: none;
+}
+
+ol li div {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  height: 64vw;
+  aspect-ratio: 6 / 4;
+  max-height: 80%;
+}
+
+ol li:nth-of-type(1) section:first-of-type h3 {
+  top: 24.5%;
+  left: 8.33%;
+}
+ol li:nth-of-type(2) section:first-of-type h3 {
+  top: 24.5%;
+  left: 25%;
+}
+ol li:nth-of-type(3) section:first-of-type h3 {
+  top: 24.5%;
+  left: 41.67%;
+}
+ol li:nth-of-type(4) section:first-of-type h3 {
+  top: 24.5%;
+  left: 58.33%;
+}
+ol li:nth-of-type(5) section:first-of-type h3 {
+  top: 24.5%;
+  left: 75%;
+}
+ol li:nth-of-type(6) section:first-of-type h3 {
+  top: 24.5%;
+  left: 91.67%;
+}
+ol li:nth-of-type(7) section:first-of-type h3 {
+  top: 49.5%;
+  left: 16.67%;
+}
+ol li:nth-of-type(8) section:first-of-type h3 {
+  top: 49.5%;
+  left: 33.33%;
+}
+ol li:nth-of-type(9) section:first-of-type h3 {
+  top: 49.5%;
+  left: 50%;
+}
+ol li:nth-of-type(10) section:first-of-type h3 {
+  top: 49.5%;
+  left: 66.67%;
+}
+ol li:nth-of-type(11) section:first-of-type h3 {
+  top: 49.5%;
+  left: 83.33%;
+}
+ol li:nth-of-type(12) section:first-of-type h3 {
+  top: 74.5%;
+  left: 8.33%;
+}
+ol li:nth-of-type(13) section:first-of-type h3 {
+  top: 74.5%;
+  left: 25%;
+}
+ol li:nth-of-type(14) section:first-of-type h3 {
+  top: 74.5%;
+  left: 41.67%;
+}
+ol li:nth-of-type(15) section:first-of-type h3 {
+  top: 74.5%;
+  left: 58.33%;
+}
+ol li:nth-of-type(16) section:first-of-type h3 {
+  top: 74.5%;
+  left: 75%;
+}
+ol li:nth-of-type(17) section:first-of-type h3 {
+  top: 74.5%;
+  left: 91.67%;
+}
+ol li:nth-of-type(18) section:first-of-type h3 {
+  top: 99.5%;
+  left: 16.67%;
+}
+ol li:nth-of-type(19) section:first-of-type h3 {
+  top: 99.5%;
+  left: 33.33%;
+}
+ol li:nth-of-type(20) section:first-of-type h3 {
+  top: 99.5%;
+  left: 50%;
+}
+ol li:nth-of-type(21) section:first-of-type h3 {
+  top: 99.5%;
+  left: 66.67%;
+}
+ol li:nth-of-type(22) section:first-of-type h3 {
+  top: 99.5%;
+  left: 83.33%;
+}
+
+.resource {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  padding: 0;
+  height: 78vw;
+  max-width: 96%;
+  aspect-ratio: 5.6 / 4;
+  max-height: 90%;
+}
+
+
+/****************************/
+/* EXTRA INFORMATION POP-UP */
+/****************************/
 
 #background {
   position: absolute;
@@ -698,8 +683,7 @@ ol li:nth-of-type(22) button {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  z-index: -1;
-  /* background-color: red; */
+  z-index: -28;
 }
 
 .info section {
@@ -707,7 +691,6 @@ ol li:nth-of-type(22) button {
   top: 48%;
   right: 10%;
   transform: translate(0%, -50%);
-  /* background-color: red; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -715,31 +698,10 @@ ol li:nth-of-type(22) button {
   width: 26em;
 }
 
-h2 {
-  font-family: 'Open Sans', sans-serif;
-  color: white;
-  font-weight: 700;
-  font-size: 3.2em;
-  text-align: center;
-}
 
-.divider {
-  background-color: white;
-  width: 100%;
-  height: .25em;
-  border-radius: .075em;
-  margin: 1em 0;
-}
-
-p {
-  font-family: 'Open Sans', sans-serif;
-  color: white;
-  opacity: .6;
-  font-weight: 400;
-  padding: .16em 0;
-  font-size: 1em;
-  text-align: center;
-}
+/*****************/
+/* MEDIA QUERIES */
+/*****************/
 
 @media (max-width: 1140px) {
   .info section {
@@ -753,6 +715,6 @@ p {
   .balls-zoom-in {
     top: 15% !important;
     left: 50% !important;
-    transform: translate(-50%, -50%) scale(320%);
+    transform: translate(-50%, -50%) scale(3.2) !important;
   }
 }
