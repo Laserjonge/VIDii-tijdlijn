@@ -2,7 +2,11 @@
 console.log("Howdy!");
 
 const balls = document.querySelectorAll("ol li div button");
-const information = document.querySelectorAll("ol li section");
+const information = document.querySelectorAll(".info");
+const heading = document.querySelector("h2");
+const paragraph = document.querySelector("p");
+// const background = document.getElementsByClassName("background");
+
 
 let outerCursor = document.querySelector(".outer-cursor");
 
@@ -10,10 +14,15 @@ let outerCursor = document.querySelector(".outer-cursor");
 
 balls.forEach((ball) => {
   ball.addEventListener("click", function (e) {
+
     ball.classList.toggle("balls-zoom-in");
     information.forEach((info) => {
       info.classList.toggle("information-visible");
     })
+
+    heading.textContent = e.target.dataset.heading;
+    paragraph.textContent = e.target.dataset.paragraph;
+    document.getElementById("background").style.backgroundImage = e.target.dataset.img;
   });
 
   ball.addEventListener("mouseover", () => {
@@ -35,7 +44,7 @@ function moveCursor(e){
   outerCursor.style.left = `${x}px`;
   outerCursor.style.top = `${y}px`;
 }
-// https://www.youtube.com/watch?v=Irwf2_1p7tQ
+// From: https://www.youtube.com/watch?v=Irwf2_1p7tQ
 
 
 const cursor =  document.getElementById('cursor');

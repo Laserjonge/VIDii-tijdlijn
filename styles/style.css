@@ -17,8 +17,11 @@ html {
   margin: 0;
   box-sizing: border-box;
   zoom: reset;
-
   touch-action: manipulation;
+}
+
+* {
+  cursor: none;
 }
 
 /* html {
@@ -44,6 +47,17 @@ body {
 
 button:hover {
   cursor: none;
+}
+
+a {
+  position: absolute;
+  font-family: 'Open Sans', sans-serif;
+  color: #1277D9;
+  font-weight: 400;
+  font-size: .8em;
+  text-decoration: none;
+  bottom: -1.2em;
+  right: .4em;
 }
 
 /*********************/
@@ -82,7 +96,7 @@ ol li {
 
 .info {
   position: absolute;
-  background-color: blue;
+  /* background-color: blue; */
   height: 100%;
   width: 100%;
   padding: 3em;
@@ -91,8 +105,6 @@ ol li {
   opacity: 0;
   transition-duration: 2s;
   transition-delay: .6s;
-
-  background-image: url("../images/wave-flag-of-uruguay-with-copyspace-background-vector.jpg");
   background-position: center;
   background-size: cover;
 }
@@ -101,6 +113,73 @@ ol li {
   opacity: 1;
   pointer-events: all;
   outline: solid 0em white !important;
+}
+
+ol li:nth-of-type(1) .info {
+  background-image: url("../images/flag-1930.jpg");
+}
+ol li:nth-of-type(2) .info {
+  background-image: url("../images/flag-1934-1990.jpg");
+}
+ol li:nth-of-type(3) .info {
+  background-image: url("../images/flag-1938-1998.jpg");
+}
+ol li:nth-of-type(4) .info {
+  background-image: url("../images/flag-1950-2014.jpg");
+}
+ol li:nth-of-type(5) .info {
+  background-image: url("../images/flag-1954.jpg");
+}
+ol li:nth-of-type(6) .info {
+  background-image: url("../images/flag-1958.jpg");
+}
+ol li:nth-of-type(7) .info {
+  background-image: url("../images/flag-1962.jpg");
+}
+ol li:nth-of-type(8) .info {
+  background-image: url("../images/flag-1966.jpg");
+}
+ol li:nth-of-type(9) .info {
+  background-image: url("../images/flag-1970-1986.jpg");
+}
+ol li:nth-of-type(10) .info {
+  background-image: url("../images/flag-1974-2006.jpg");
+}
+ol li:nth-of-type(11) .info {
+  background-image: url("../images/flag-1978.jpg");
+}
+ol li:nth-of-type(12) .info {
+  background-image: url("../images/flag-1982.jpg");
+}
+ol li:nth-of-type(13) .info {
+  background-image: url("../images/flag-1970-1986.jpg");
+}
+ol li:nth-of-type(14) .info {
+  background-image: url("../images/flag-1934-1990.jpg");
+}
+ol li:nth-of-type(15) .info {
+  background-image: url("../images/flag-1994.jpg");
+}
+ol li:nth-of-type(16) .info {
+  background-image: url("../images/flag-1938-1998.jpg");
+}
+ol li:nth-of-type(17) .info {
+  background-image: url("../images/flag-2002jpg.jpg");
+}
+ol li:nth-of-type(18) .info {
+  background-image: url("../images/flag-1974-2006.jpg");
+}
+ol li:nth-of-type(19) .info {
+  background-image: url("../images/flag-2010.jpg");
+}
+ol li:nth-of-type(20) .info {
+  background-image: url("../images/flag-1950-2014.jpg");
+}
+ol li:nth-of-type(21) .info {
+  background-image: url("../images/flag-2018.jpg");
+}
+ol li:nth-of-type(22) .info {
+  background-image: url("../images/flag-2022.jpg");
 }
 
 .year {
@@ -229,7 +308,7 @@ main {
   background-size: cover;
 }
 
-main > section {
+main > section:first-of-type {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -253,6 +332,19 @@ main > section {
   animation-timing-function: ease;
 }
 
+.resource {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  padding: 0;
+  height: 78vw;
+  max-width: 96%;
+  aspect-ratio: 5.6 / 4;
+  max-height: 90%;
+}
+
 @keyframes lineup {
   0% {
     opacity: 0;
@@ -274,6 +366,22 @@ h1 {
   font-weight: 700;
   padding: .16em 0;
   font-size: 1.4em;
+
+  animation-duration: 2s;
+  animation-delay: 1.2s;
+  animation-name: heading-delay;
+  animation-timing-function: cubic-bezier(0.5, 0.05, 1, 0.5);
+  animation-fill-mode: backwards;
+  animation-timing-function: ease;
+}
+
+@keyframes heading-delay {
+  0% {
+    color: rgba(255, 255, 255, 0);
+  }
+  100% {
+    color: white;
+  }
 }
 
 h3 {
@@ -556,125 +664,6 @@ ol li:nth-of-type(22) button {
   }
 }
 
-
-
-
-/* @media (max-width: 700px) {
-  .year {
-    position: absolute;
-    margin: 0;
-    padding: 0;
-    height: 120vw;
-    aspect-ratio: 9 / 12;
-    max-height: 100%;
-  }
-
-  ol li div {
-    position: relative;
-    margin: 0;
-    padding: 0;
-    height: 120vw;
-    aspect-ratio: 9 / 12;
-    max-height: 100%;
-  }
-
-  ol li:nth-of-type(1) button {
-    top: 5.57%;
-    left: 16.67%;
-  }
-  ol li:nth-of-type(2) button {
-    top: 5.57%;
-    left: 50%;
-  }
-  ol li:nth-of-type(3) button {
-    top: 5.57%;
-    left: 83.33%;
-  }
-  ol li:nth-of-type(4) button {
-    top: 16.67%;
-    left: 33.33%;
-  }
-  ol li:nth-of-type(5) button {
-    top: 16.67%;
-    left: 66.67%;
-  }
-  ol li:nth-of-type(6) button {
-    top: 27.78%;
-    left: 16.67%;
-  }
-  
-  ol li:nth-of-type(7) button {
-    top: 27.78%;
-    left: 50%;
-  }
-  ol li:nth-of-type(8) button {
-    top: 27.78%;
-    left: 83.33%;
-  }
-  ol li:nth-of-type(9) button {
-    top: 38.89%;
-    left: 33.33%;
-  }
-  ol li:nth-of-type(10) button {
-    top: 38.89%;
-    left: 66.67%;
-  }
-  ol li:nth-of-type(11) button {
-    top: 50%;
-    left: 16.67%;
-  }
-  
-  ol li:nth-of-type(12) button {
-    top: 50%;
-    left: 50%;
-  }
-  ol li:nth-of-type(13) button {
-    top: 50%;
-    left: 83.33%;
-  }
-  ol li:nth-of-type(14) button {
-    top: 61.11%;
-    left: 33.33%;
-  }
-  ol li:nth-of-type(15) button {
-    top: 61.11%;
-    left: 66.67%;
-  }
-  ol li:nth-of-type(16) button {
-    top: 72.22%;
-    left: 16.67%;
-  }
-  ol li:nth-of-type(17) button {
-    top: 72.22%;
-    left: 50%;
-  }
-  
-  ol li:nth-of-type(18) button {
-    top: 72.22%;
-    left: 83.33%;
-  }
-  ol li:nth-of-type(19) button {
-    top: 83.33%;
-    left: 33.33%;
-  }
-  ol li:nth-of-type(20) button {
-    top: 83.33%;
-    left: 66.67%;
-  }
-  ol li:nth-of-type(21) button {
-    top: 94.44%;
-    left: 16.67%;
-  }
-  ol li:nth-of-type(22) button {
-    top: 94.44%;
-    left: 50%;
-  }
-  ol li:nth-of-type(23) button {
-    top: 94.44%;
-    left: 83.33%;
-  }
-} */
-
 .inner-cursor img {
   width: 1vw;
   height: 1vw;
@@ -697,4 +686,73 @@ ol li:nth-of-type(22) button {
 
 .cursor {
   opacity: 0;
+}
+
+
+#background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  /* background-color: red; */
+}
+
+.info section {
+  position: absolute;
+  top: 48%;
+  right: 10%;
+  transform: translate(0%, -50%);
+  /* background-color: red; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 26em;
+}
+
+h2 {
+  font-family: 'Open Sans', sans-serif;
+  color: white;
+  font-weight: 700;
+  font-size: 3.2em;
+  text-align: center;
+}
+
+.divider {
+  background-color: white;
+  width: 100%;
+  height: .25em;
+  border-radius: .075em;
+  margin: 1em 0;
+}
+
+p {
+  font-family: 'Open Sans', sans-serif;
+  color: white;
+  opacity: .6;
+  font-weight: 400;
+  padding: .16em 0;
+  font-size: 1em;
+  text-align: center;
+}
+
+@media (max-width: 1140px) {
+  .info section {
+    position: absolute;
+    top: 64%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 22em;
+  }
+
+  .balls-zoom-in {
+    top: 15% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) scale(320%);
+  }
 }
